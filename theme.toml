@@ -8,10 +8,10 @@ features = ["responsive", "dark-mode", "syntax-highlighting"]
 min_version = "0.112.0"
 
 [author]
-  name = "Converted to Hugo"
+  name = "Hugo Cayman Theme"
   homepage = "https://github.com/haydenk/hugo-cayman"
 
 [original]
   name = "Jekyll Cayman Theme"
-  homepage = "https://github.com/haydenk/hugo-cayman"
-  repo = "https://github.com/haydenk/hugo-cayman"
+  homepage = "https://github.com/pages-themes/cayman"
+  repo = "https://github.com/pages-themes/cayman"

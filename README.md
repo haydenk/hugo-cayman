@@ -1,6 +1,6 @@
 # Hugo Cayman Theme
 
-A clean, responsive Hugo theme converted from the [Jekyll Cayman theme](https://github.com/haydenk/hugo-cayman). Features a bold gradient header, responsive design, and automatic dark mode support.
+A clean, responsive Hugo theme converted from the [Jekyll Cayman theme](https://github.com/pages-themes/cayman). Features a bold gradient header, responsive design, and automatic dark mode support.
 
 ## Features
 
@@ -28,7 +28,7 @@ A clean, responsive Hugo theme converted from the [Jekyll Cayman theme](https://
    ```toml
    [module]
      [[module.imports]]
-       path = "github.com/yourusername/hugo-cayman"
+       path = "github.com/haydenk/hugo-cayman"
    ```
 
 3. Update modules:
@@ -41,7 +41,7 @@ A clean, responsive Hugo theme converted from the [Jekyll Cayman theme](https://
 
 ```bash
 cd your-hugo-site
-git submodule add https://github.com/yourusername/hugo-cayman.git themes/cayman
+git submodule add https://github.com/haydenk/hugo-cayman.git themes/cayman
 ```
 
 Then add to your `config.toml`:
@@ -152,8 +152,10 @@ hugo-cayman/
 ├── assets/
 │   └── css/
 │       ├── _variables.css   # CSS custom properties
+│       ├── _font.css        # Font CSS Settings
+│       ├── _syntax.css      # Hugo chroma styles light and dark
 │       ├── _normalize.css   # Normalize.css
-│       └── _base.css        # Theme styles
+│       └── main.css         # Theme styles
 ├── layouts/
 │   ├── _default/
 │   │   ├── baseof.html      # Base template
@@ -179,13 +181,13 @@ The theme uses Hugo's asset pipeline to combine and minify CSS files. In develop
 Run your site in development:
 
 ```bash
-hugo server -D
+mise serve
 ```
 
 Build for production:
 
 ```bash
-hugo --minify
+mise build
 ```
 
 ## Credits
