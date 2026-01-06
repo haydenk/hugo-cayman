@@ -5,7 +5,7 @@ theme = "hugo-cayman"
 canonifyURLs = true
 enableRobotsTXT = true
 summaryLength = 10
-mainSections = ['development', 'posts']
+mainSections = ['posts']
 
 [params]
     description = "Cayman is a clean, responsive theme for GitHub Pages."
@@ -17,6 +17,11 @@ mainSections = ['development', 'posts']
     name = 'Home'
     pageRef = '/'
     weight = 10
+
+  [[menu.main]]
+    name = 'Development'
+    pageRef = '/development'
+    weight = 11
 
   [[menu.main]]
     name = "Tags"
@@ -33,7 +38,7 @@ mainSections = ['development', 'posts']
         posts = '/post/:year/:month/:day/:slug/'
         development = '/development/:year/:month/:day/:slug/'
     [permalinks.section]
-        posts = '/posts/'
+        posts = '/post/'
         development = 'development'
 
 [taxonomies]

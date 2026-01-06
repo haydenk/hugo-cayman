@@ -13,9 +13,9 @@
     </div>
     {{- end -}}
 
-    {{- $posts := .Paginator.Pages -}}
-    {{- if $posts -}}
-        {{ $posts }}
+    {{- $pages := .Paginator.Pages -}}
+    {{- if $pages -}}
+        {{- partial "posts.html" (dict "context" . "posts" $pages) -}}
     {{- else -}}
     <p class="no-posts">No posts in this section yet.</p>
     {{- end -}}

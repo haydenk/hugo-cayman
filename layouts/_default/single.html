@@ -1,5 +1,6 @@
 {{- define "main" -}}
   {{- /* Display date for blog posts */ -}}
+  <h2>{{ .Title }}</h2>
   {{- if and .Date (not .Params.hide_date) -}}
     <p><small>{{ .Date.Format "January 2, 2006" }}</small></p>
   {{- end -}}

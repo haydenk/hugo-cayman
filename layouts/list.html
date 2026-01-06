@@ -6,8 +6,8 @@
     </div>
     {{- end -}}
 
-    {{- $posts := .Paginator.Pages -}}
-    {{- if $posts -}}
-        {{ $posts }}
+    {{- $pages := .Paginator.Pages -}}
+    {{- if $pages -}}
+        {{- partial "posts.html" (dict "context" . "posts" $pages) -}}
     {{- end -}}
 {{- end -}}
