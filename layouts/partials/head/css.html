@@ -1,0 +1,16 @@
+{{- $styles := sort (resources.Match "css/*.css") ".Name" -}}
+{{- if eq hugo.Environment "development" -}}
+    {{- range $styles -}}
+        {{- with resources.Get . -}}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{- end -}}
+    {{- end -}}
+{{- else -}}
+    {{- $CSS := slice -}}
+    {{- range $styles -}}
+        {{- $CSS = $CSS | append (resources.Get .) -}}
+    {{- end -}}
+    {{- with $CSS | resources.Concat "main.css" | minify | fingerprint -}}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- end -}}
+{{- end -}}

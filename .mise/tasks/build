@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+#MISE description="Build Hugo site"
+#MISE depends=["clean"]
+
+source="$MISE_PROJECT_ROOT/exampleSite"
+themeDir=`dirname $MISE_PROJECT_ROOT`
+
+hugo --gc --minify --noBuildLock --cleanDestinationDir -s $source --themesDir $themeDir --destination $MISE_PROJECT_ROOT/dist

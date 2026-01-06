@@ -1,0 +1,19 @@
+{{- /* Auto-discover and combine JS files from assets/js/ */ -}}
+{{- /* Currently no JavaScript files in the Cayman theme */ -}}
+{{- /* This partial is a placeholder for future JS assets */ -}}
+
+{{- $js := slice -}}
+
+{{- /* Example: Add custom JS files here */ -}}
+{{- /* with resources.Get "js/main.js" */ -}}
+{{- /*   $js = $js | append . */ -}}
+{{- /* end */ -}}
+
+{{- /* Concatenate and minify if any JS files exist */ -}}
+{{- if $js -}}
+  {{- $scripts := $js | resources.Concat "js/bundle.js" -}}
+  {{- if hugo.IsProduction -}}
+    {{- $scripts = $scripts | resources.Minify | resources.Fingerprint -}}
+  {{- end -}}
+  <script src="{{ $scripts.Permalink }}"{{- if hugo.IsProduction }} integrity="{{ $scripts.Data.Integrity }}"{{- end }} defer></script>
+{{- end -}}

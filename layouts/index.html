@@ -1,0 +1,11 @@
+{{- define "main" -}}
+  {{- .Content -}}
+
+  {{- /* List recent posts if any */ -}}
+  {{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+  {{- if $pages -}}
+    <h2>Recent Posts</h2>
+    {{- partial "posts.html" (dict "context" . "posts" $pages) -}}
+    <a href="{{ "archive" | relURL }}" class="view-all">View all posts →</a>
+  {{- end -}}
+{{- end -}}

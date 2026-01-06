@@ -1,0 +1,25 @@
+{{- define "main" -}}
+  {{- /* Display date for blog posts */ -}}
+  {{- if and .Date (not .Params.hide_date) -}}
+    <p><small>{{ .Date.Format "January 2, 2006" }}</small></p>
+  {{- end -}}
+
+  {{- .Content -}}
+
+  {{- /* Navigation to next/previous posts */ -}}
+  {{- if or .NextInSection .PrevInSection -}}
+    <hr>
+    <nav>
+      {{- if .PrevInSection -}}
+        <a href="{{ .PrevInSection.Permalink }}">&larr; {{ .PrevInSection.Title }}</a>
+      {{- else -}}
+        <span></span>
+      {{- end -}}
+      {{- if .NextInSection -}}
+        <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }} &rarr;</a>
+      {{- else -}}
+        <span></span>
+      {{- end -}}
+    </nav>
+  {{- end -}}
+{{- end -}}

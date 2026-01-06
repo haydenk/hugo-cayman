@@ -1,0 +1,17 @@
+name = "Cayman"
+license = "CC0-1.0"
+licenselink = "https://github.com/haydenk/hugo-cayman/blob/master/LICENSE"
+description = "A clean, responsive Hugo theme converted from the Jekyll Cayman theme"
+homepage = "https://github.com/haydenk/hugo-cayman"
+tags = ["blog", "clean", "minimal", "responsive", "simple"]
+features = ["responsive", "dark-mode", "syntax-highlighting"]
+min_version = "0.112.0"
+
+[author]
+  name = "Converted to Hugo"
+  homepage = "https://github.com/haydenk/hugo-cayman"
+
+[original]
+  name = "Jekyll Cayman Theme"
+  homepage = "https://github.com/haydenk/hugo-cayman"
+  repo = "https://github.com/haydenk/hugo-cayman"

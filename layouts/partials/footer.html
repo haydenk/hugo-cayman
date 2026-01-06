@@ -1,0 +1,16 @@
+<footer>
+  {{- /* GitHub Project Footer */ -}}
+  {{- if .Site.Params.github.is_project_page }}
+    <span>
+      <a href="{{ .Site.Params.github.repository_url }}">{{ .Site.Params.github.repository_name }}</a> is maintained by
+      <a href="{{ .Site.Params.github.owner_url }}">{{ .Site.Params.github.owner_name }}</a>.
+    </span>
+  {{- end }}
+
+  {{- /* Custom Footer Text or Default */ -}}
+  {{- with .Site.Params.footer_text }}
+    <span>{{ . | markdownify }}</span>
+  {{- else }}
+    <span>Built with <a href="https://gohugo.io/">Hugo</a> using the <a href="https://github.com/haydenk/hugo-cayman">Cayman</a> theme.</span>
+  {{- end }}
+</footer>

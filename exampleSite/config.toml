@@ -1,0 +1,65 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "Cayman theme"
+theme = "hugo-cayman"
+canonifyURLs = true
+enableRobotsTXT = true
+summaryLength = 10
+mainSections = ['development', 'posts']
+
+[params]
+    description = "Cayman is a clean, responsive theme for GitHub Pages."
+    [params.home]
+        post_limit = 10
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[menu.main]]
+    name = "Tags"
+    pageRef = "/tags"
+    weight = 13
+
+  [[menu.main]]
+    name = "Archive"
+    pageRef = "/archive"
+    weight = 99
+
+[permalinks]
+    [permalinks.page]
+        posts = '/post/:year/:month/:day/:slug/'
+        development = '/development/:year/:month/:day/:slug/'
+    [permalinks.section]
+        posts = '/posts/'
+        development = 'development'
+
+[taxonomies]
+    tag = "tags"
+    category = "archive"
+
+[outputFormats]
+    [outputFormats.rss]
+        mediaType = "application/rss+xml"
+        baseName = "feed"
+    [outputFormats.json]
+        mediaType = "application/json"
+        baseName = "feed"
+        isPlainText = true
+
+[outputs]
+    home = ['html','json','rss']
+    page = ['html']
+    section = ['html']
+    taxonomy = ['html']
+    term = ['html']
+
+[pagination]
+    pagerSize = 5
+
+[markup]
+    [markup.highlight]
+        noClasses = false
+        lineNos = true

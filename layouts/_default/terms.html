@@ -1,0 +1,43 @@
+
+{{- define "main" -}}
+    {{- $site := .Site -}}
+
+    <div class="content">
+        <h2>{{ .Title }}</h2>
+
+        {{- if .Content -}}
+        <div class="description">
+            {{ .Content }}
+        </div>
+        {{- end -}}
+    </div>
+
+    {{- if eq .Type "tags" -}}
+        <section class="tags">
+        {{- range $tag, $value := .Site.Taxonomies.tags -}}
+            <a href="{{ $value.Page.RelPermalink }}">{{ $tag }}({{ $value.Count }})</a>
+        {{- end -}}
+        </section>
+    {{- end -}}
+
+    {{- if eq .Type "archive" -}}
+        {{- $groups := slice -}}
+        {{- range .Site.MainSections -}}
+            {{ $groups = $groups | append (where $site.RegularPages "Section" "in" .| group .) }}
+        {{- end -}}
+        {{- range $groups -}}
+            {{- $posts := .Pages -}}
+            {{- if .Pages -}}
+                <section class="terms">
+                    <h3>{{ title .Key }}</h3>
+                    {{- range .Pages -}}
+                    <article class="summary">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                    </article>                
+                    {{- end -}}
+                </section>
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}

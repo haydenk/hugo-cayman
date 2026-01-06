@@ -1,0 +1,28 @@
+{{- define "main" -}}
+
+<div class="content">
+    <h2>{{ lower (replace .Title "-" " ") }}</h2>
+
+    {{- if .Content -}}
+    <div class="description">
+        {{ .Content }}
+    </div>
+    {{- end -}}
+
+    {{- $term := .Data.Term -}}
+    
+    <section class="terms">
+        {{- range $tag, $value := .Site.Taxonomies.tags -}}
+            {{- if eq $tag $term -}}
+            {{- range $value -}}
+                <article class="summary">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                </article>                
+            {{- end -}}
+            {{- end -}}
+        {{- end -}}
+    </section>
+</div>
+
+{{- end -}}

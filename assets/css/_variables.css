@@ -1,0 +1,30 @@
+
+/* CSS Custom Properties for Cayman Theme */
+/* Converted from Sass variables with light-dark() support */
+
+:root {
+  color-scheme: light dark;
+
+  --base-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --base-font-size: 16px;
+
+  /* Header Colors */
+  --header-heading-color: #fff;
+  --header-bg-color: light-dark(#159957, #115740);
+  --header-bg-color-secondary: light-dark(#155799, #0d3a66);
+
+  /* Text Colors */
+  --section-headings-color: light-dark(#159957, #4ade80);
+  --body-text-color: light-dark(#606c71, #c9d1d9);
+  --body-link-color: light-dark(#1e6bb8, #58a6ff);
+  --blockquote-text-color: light-dark(#819198, #8b949e);
+
+  /* Code Block Colors */
+  --code-bg-color: light-dark(#f3f6fa, #161b22);
+  --code-text-color: light-dark(#567482, #c9d1d9);
+
+  /* Border Colors */
+  --border-color: light-dark(#dce6f0, #30363d);
+  --table-border-color: light-dark(#e9ebec, #30363d);
+  --hr-border-color: light-dark(#eff0f1, #21262d);
+}
