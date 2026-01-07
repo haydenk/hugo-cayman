@@ -159,6 +159,7 @@ main {
         }
       }
     }
+
   }
 
   nav {
@@ -245,6 +246,35 @@ main {
       &:last-of-type {
         color: var(--blockquote-text-color);
       }
+    }
+  }
+}
+
+ul.pagination {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+
+  a[aria-disabled="true"] {
+    color: transparent;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  a[aria-current="page"] {
+    color: #fbfbfb;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
