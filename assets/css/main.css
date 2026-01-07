@@ -272,7 +272,7 @@ ul.pagination {
   }
 
   a[aria-current="page"] {
-    color: #fbfbfb;
+    color: var(--pagination-current-page);
     &:hover {
       text-decoration: none;
     }
