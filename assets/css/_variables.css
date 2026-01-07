@@ -27,6 +27,4 @@
   --border-color: light-dark(#dce6f0, #30363d);
   --table-border-color: light-dark(#e9ebec, #30363d);
   --hr-border-color: light-dark(#eff0f1, #21262d);
-
-  --pagination-current-page: light-dark(#0a0a0a, #fbfbfb);
 }
